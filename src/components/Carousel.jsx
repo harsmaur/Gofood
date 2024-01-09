@@ -6,16 +6,26 @@ export default function Carousel() {
             <div id="carouselExample" className="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div className="carousel-inner">
 
+                    <div class=" carousel-caption  " style={{ zIndex: "9" }}>
+                        <form className=" d-flex justify-content-center">  {/* justify-content-center, copy this <form> from navbar for search box */}
+                            <input className="form-control me-2 w-75 bg-white text-dark btn-outline-success" type="search" placeholder="Gulab Jamun..." aria-label="Search" />
+                            <button className="btn text-white bg-success" type="submit">Search</button>
+                        </form>
+                    </div>
+
                     <div className="carousel-item active">
-                        <img src="https://source.unsplash.com/random/1000x400/?burger" className="d-block w-100 img-fluid" alt="Burger" />
+
+                        <img src="https://source.unsplash.com/random/1000x400/?burger" className="d-block w-100 img-fluid" alt="Burger" style={{ filter: "brightness(100%" }} />
+
+
                     </div>
 
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/1000x400/?fries" className="d-block w-100 img-fluid" alt="Fries" />
+                        <img src="https://source.unsplash.com/random/1000x400/?fries" className="d-block w-100 img-fluid" alt="Fries" style={{ filter: "brightness(100%" }} />
                     </div>
 
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/1000x400/?pizza" className="d-block w-100 img-fluid" alt="Pizza" />
+                        <img src="https://source.unsplash.com/random/1000x400/?pizza" className="d-block w-100 img-fluid" alt="Pizza" style={{ filter: "brightness(100%" }} />
                     </div>
                 </div>
 
