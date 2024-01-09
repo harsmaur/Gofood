@@ -1,24 +1,25 @@
 
 import './App.css';
 import Home from './Screens/Home';
-import Navbar from './components/Navbar';
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from './Screens/Login';
 
 
 function App() {
   return (
     <BrowserRouter>
     <div>
-
     <Routes>
 
-      <Route exact path='/' element={<Home/>}></Route>
 
-       <Route exact path="/about" element={<Navbar />}></Route>	
+
+      <Route exact path='/' element={<Home/>}></Route>
+      <Route exact path='/login' element={<Login/>}></Route>
+
+
 
     </Routes>
-
-
     </div>
   </BrowserRouter>
   );
