@@ -10,7 +10,15 @@ export default function Home() {
 
       <div> <Navbar /> </div>
       <div><Carousel/></div>
-       <div><Card/></div>
+
+      <div className="mt-3 container   d-flex justify-content-around">
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+   
+      </div>
+      
       <div><Footer /></div>
 
 
