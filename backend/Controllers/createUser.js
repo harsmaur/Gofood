@@ -1,7 +1,17 @@
 
 import userModel from "../Schema/User.js";
+import { validationResult } from 'express-validator';
 
 const createUser = async (req, res) => {
+    //check validation
+    const result = validationResult(req);
+    if (result.isEmpty()) {
+       
+         return res.send(`Hello body is validated`);
+    }
+
+    res.send({ errors: result.array() });
+ 
     try {
         const { name, email, password, location } = req.body;
         const doc = new userModel({
@@ -18,7 +28,7 @@ const createUser = async (req, res) => {
 
         console.log(error)
         res.json({ "success": "false" })
-        
+
     }
 }
 
