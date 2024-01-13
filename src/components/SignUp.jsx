@@ -27,7 +27,7 @@ export default function SignUp() {
 
     // here below name is the parameter in html tag and value also
     const onChange = (e) => {
-        setcredentials({ ...credentials, [e.target.name]: [e.target.value] })
+        setcredentials({ ...credentials, [e.target.name]: e.target.value.toString() })
     }
 
     return (
@@ -60,7 +60,7 @@ export default function SignUp() {
                                             </div>
 
                                             <div className="form-outline mb-4">
-                                                <input type="text" id="form3Example4cg" className="form-control form-control-lg" name='geolocation' value={credentials.geolocation} onChange={onChange} />
+                                                <input type="text" id="form3Example5cg" className="form-control form-control-lg" name='geolocation' value={credentials.geolocation} onChange={onChange} />
                                                 <label className="form-label" htmlFor="geolocation">location</label>
                                             </div>
 
