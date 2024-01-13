@@ -13,12 +13,12 @@ const createUser = async (req, res) => {
     res.send({ errors: result.array() });
  
     try {
-        const { name, email, password, location } = req.body;
+        const { name, email, password, geolocation } = req.body;
         const doc = new userModel({
             name: name,
             email: email,
             password: password,
-            location: location
+            geolocation: geolocation
         })
 
         await doc.save();
