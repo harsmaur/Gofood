@@ -9,16 +9,7 @@ export default function SignUp() {
 
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
 
-    const notify = () => toast.success('Message Sent!', {
-        position: "top-right",
-        autoClose: 1300,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+    
 
 
     const handleSubmit = async (e) => {
