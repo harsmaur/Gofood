@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
 import './signup.css';
 import { Link } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUp() {
 
+
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
+
+    const notify = () => toast.success('Message Sent!', {
+        position: "top-right",
+        autoClose: 1300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
 
 
     const handleSubmit = async (e) => {
@@ -21,7 +34,9 @@ export default function SignUp() {
         const json = await response.json()
         console.log(json);
         if(!json.success){
-            alert('Invalid credentials')
+            toast.error('Invalid credentials');
+        }else{
+            toast.success('User created successfully');
         }
     }
 
@@ -82,7 +97,9 @@ export default function SignUp() {
                         </div>
                     </div>
                 </div>
+
             </section>
+            <ToastContainer />
         </>
     )
 }
