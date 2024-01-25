@@ -11,7 +11,7 @@ export default function Login() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/createUser", {
+    const response = await fetch("http://localhost:5000/loginUser", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ export default function Login() {
     if(!json.success){
         toast.error('Invalid credentials');
     }else{
-        toast.success('User created successfully');
+        toast.success('User logged successfully');
     }
 }
 
