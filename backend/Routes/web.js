@@ -13,5 +13,8 @@ router.post('/createUser',
     ,
     createUser);
 
-router.post('/loginUser',loginUser);
+router.post('/loginUser', 
+body('email', 'Invalid email').isEmail(),
+body('password', 'Incorrect password').isLength({ min: 5 }),
+loginUser);
 export default router;

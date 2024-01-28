@@ -4,8 +4,12 @@ import '../components/signup.css';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+
+  let navigate = useNavigate();
+
 
   const [credentials, setcredentials] = useState({  email: "", password: "" })
   
@@ -22,16 +26,22 @@ export default function Login() {
     const json = await response.json()
     console.log(json);
     if(json.success){
-        toast.success('User logged successfully');
-      
+        toast.success('User logged successfully');  
+        navigate('/');
+        localStorage.setItem('authToken', json.authToken)
+        console.log(localStorage.getItem('authToken'))
     }else{
         toast.error('Invalid credentials');
     }
 }
 
+
+
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value.toString() })
 }
+
+
   return (
     <>
        <section className="vh-100 bg-image"
