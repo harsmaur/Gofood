@@ -4,7 +4,7 @@ import { validationResult } from 'express-validator';
 
 const createUser = async (req, res) => {
     const result = validationResult(req);
-    if (result.isEmpty()) {
+    if (result.isEmpty()) { // returns true if not empty
         try {
             const { name, email, password, geolocation } = req.body;
             const doc = new userModel({

@@ -21,10 +21,11 @@ export default function Login() {
     
     const json = await response.json()
     console.log(json);
-    if(!json.success){
-        toast.error('Invalid credentials');
-    }else{
+    if(json.success){
         toast.success('User logged successfully');
+      
+    }else{
+        toast.error('Invalid credentials');
     }
 }
 
