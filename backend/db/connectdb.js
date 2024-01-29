@@ -8,11 +8,26 @@ export const connectdb = async(db_url)=>{
 
         console.log('Connection Success');
 
-        const collection = await mongoose.connection.db.collection("food_items");
-        const data = await collection.find({}).toArray();
-            global.food_items = data;
+        const food_items = await mongoose.connection.db.collection("food_items");
+        const food_items_data = await food_items.find({}).toArray()
+        global.food_items_data = food_items_data
+        // console.log(food_items_data);
+        //    console.log("harsh")
+        const foodCategory =  await mongoose.connection.db.collection("food_Category");
+        const food_cateogory_data = await foodCategory.find({}).toArray()
+        global.food_cateogory_data = food_cateogory_data
+        // console.log(food_cateogory_data);
+              
+            
+
+        
+
+      
+
+
+        
             // console.log(global.food_items)
-        // console.log(data)
+            // console.log(food_cateogory_data)
     
     }
     catch(err)

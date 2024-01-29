@@ -1,6 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+
 
 export default function Card() {
+    
+    const [foodCat, setfoodCat] = useState([])
+    const [foodItem, setfoodItem] = useState([])
+
+    const loadData = async()=>{
+
+        let response = await fetch("http://localhost:5000/display_food_items", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            
+        })
+        response = await response.json();
+        // console.log(response[0], response[1]);
+        setfoodItem(response[0]);
+        setfoodCat(response[1]);
+    }
+    useEffect(() => {
+      loadData();
+    
+      
+      
+    }, []) // we write dependecy when we need it to reload again for some changes in other components if empty it means it will ru nthe inside content of useeffect when page loads
+    
+
     return (
         <div>
 
