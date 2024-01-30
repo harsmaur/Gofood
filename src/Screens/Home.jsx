@@ -26,8 +26,6 @@ export default function Home() {
   }
   useEffect(() => {
     loadData();
-  
-    
     
   }, []) // we write dependecy when we need it to reload again for some changes in other components if empty it means it will ru nthe inside content of useeffect when page loads
   return (
@@ -47,8 +45,8 @@ export default function Home() {
                 <hr/>
                 {foodItem.length !== 0 ? foodItem.filter((item)=> item.CategoryName === category.CategoryName).map((filterItems, key)=>{
                   return (
-                   <div key={filterItems._id} className='col-12 col-sm-6 col-md-4 col-lg-3'>
-                        <Card />
+                   <div key={filterItems._id} className='col-12 col-sm-6 col-md-4 col-lg-3 '>
+                        <Card foodName ={filterItems.name} imgSrc ={filterItems.img} options = {filterItems.options[0]} description = {filterItems.description}/>
                    </div>
                   )
                 }) 
