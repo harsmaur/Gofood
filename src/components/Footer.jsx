@@ -5,10 +5,10 @@ export default function Footer() {
   return (
   
   <div className="">
-      <footer class=" d-flex mt-auto flex-column min-vh-100  p bg-body-tertiary text-center text-lg-start">
-        <div class="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+      <footer className=" d-flex mt-auto flex-column bg-success  p bg-body-tertiary text-center text-lg-start">
+        <div className="text-center p-4 bg-success text-white"  >
           © 2023 Copyright GoFood:
-          <Link class="text-body" to="harsmaur@gmail.com ">harsmaur@gmail.com</Link>
+          <Link className="text-body text-white " to="harsmaur@gmail.com ">harsmaur@gmail.com</Link>
         </div>
 
       </footer>
