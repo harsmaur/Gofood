@@ -19,13 +19,7 @@ export const connectdb = async(db_url)=>{
         // console.log(food_cateogory_data);
               
             
-
-        
-
-      
-
-
-        
+     
             // console.log(global.food_items)
             // console.log(food_cateogory_data)
     
