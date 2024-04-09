@@ -1,4 +1,9 @@
 import React from 'react'
+import { useDispatchCart, useCart } from '../components/ContextReducer'
+import { useState } from 'react';
+
+
+
 
 
 
@@ -7,7 +12,10 @@ export default function Card(props) {
 
     let options = props.options;
     let priceOptions = Object.keys(options);
-    
+
+    const [quantity, setQuantity] = useState(1);
+    const [size, setSize] = useState("");
+
     const handleAddToCart = ()=>{
 
     }
@@ -17,10 +25,10 @@ export default function Card(props) {
 
 
             <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
-                <img src={props.imgSrc} className="card-img-top" alt="..."  style={{height:"130px", objectFit:"fill"}} />
+                <img src={props.foodItem.img} className="card-img-top" alt="..."  style={{height:"130px", objectFit:"fill"}} />
                 <div className="card-body">
-                    <h5 className="card-title"> {props.foodName} </h5>
-                    <p className="card-text">Some quictent.</p>
+                    <h5 className="card-title"> {props.foodItem.name} </h5>
+                    {/* <p className="card-text">Some quictent.</p> */}
                     <div className="container w-100">
                         <select className="m-2 h-100  bg-success rounded bg-outline-success text-white">
                             {

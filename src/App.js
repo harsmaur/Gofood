@@ -5,10 +5,12 @@ import Home from './Screens/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from './Screens/Login';
 import SignUp from './components/SignUp';
+import { CartProvider } from './components/ContextReducer';
 
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
     <div>
     <Routes>
@@ -24,6 +26,7 @@ function App() {
     </Routes>
     </div>
   </BrowserRouter>
+  </CartProvider>
   );
 }
 
