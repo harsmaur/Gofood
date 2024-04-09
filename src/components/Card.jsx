@@ -9,16 +9,22 @@ import { useState } from 'react';
 
 export default function Card(props) {
     
-
+    let dispatch = useDispatchCart();
     let options = props.options;
     let priceOptions = Object.keys(options);
+    let data = useCart();
 
     const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState("");
 
-    const handleAddToCart = ()=>{
-
+    const handleAddToCart = async ()=>{
+        await dispatch({type: "ADD", id: props.foodItem._id,name: props.foodItem.name, price: props.foodItem.finalPrice, qty: quantity,size: size});
+        console.log(data)
     }
+
+
+    let finalPrice = qty * parseInt(options[size]);
+
     return (
         <div className=' mt-3 m-2'>
 
@@ -30,7 +36,7 @@ export default function Card(props) {
                     <h5 className="card-title"> {props.foodItem.name} </h5>
                     {/* <p className="card-text">Some quictent.</p> */}
                     <div className="container w-100">
-                        <select className="m-2 h-100  bg-success rounded bg-outline-success text-white">
+                        <select className="m-2 h-100  bg-success rounded bg-outline-success text-white" onChange={(e)=>setQuantity(e.target.value)}>
                             {
                                 Array.from(Array(5), (e, i) => {
                                     return (
@@ -41,7 +47,7 @@ export default function Card(props) {
                             }
                         </select>
 
-                        <select className="m-2 h-100  bg-success rounded text-white bg-outline-success">
+                        <select className="m-2 h-100  bg-success rounded text-white bg-outline-success" onChange={(e)=>setSize(e.target.value)}>
                             {
                             priceOptions.map((data, key)=>{
                                 return(
@@ -52,7 +58,7 @@ export default function Card(props) {
                         </select>
 
                         <div className="d-block h-100 fs-5">
-                            Total Price
+                            {finalPrice} Rs.
                         </div>
                     <hr/>
                    

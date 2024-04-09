@@ -45,7 +45,7 @@ export default function Home() {
       <div>
          <div id="carouselExample" className="carousel slide carousel-fade" style={{ objectFit: "contain !important" }} data-bs-ride="carousel">
                
-               <div class=" carousel-caption  " style={{ zIndex: "9" }}>
+               <div className=" carousel-caption  " style={{ zIndex: "9" }}>
                   <div className=" d-flex justify-content-center   ">
                       <input className="form-control me-2 w-75 bg-white text-dark btn-outline-success p-3" type="search" placeholder="Gulab Jamun..." aria-label="Search" value={search} onChange={(e)=>{setSearch(e.target.value)}} />
                       {/* <button className="btn text-white bg-success" type="submit">Search</button> */}
