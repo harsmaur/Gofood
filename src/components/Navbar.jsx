@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import Badge from 'react-bootstrap/Badge'
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function Navbar() {
   
   }
   return (
-    <div>
+    <div >
 
 
       <nav className="navbar navbar-expand-lg bg-body-success bg-success navbar-dark ">
@@ -56,9 +57,12 @@ export default function Navbar() {
                 : 
                 
                 <div className='d-flex '>
-                  <Link className="btn text-success bg-white mx-1 " to="/">Cart</Link>
-
-                  <Link className="btn text-danger bg-white mx-1 " to="/" onClick={handleLogout}>Logout</Link>
+                  <div className="btn text-success bg-white mx-1 " to="/">
+                    Cart {" "}
+                     <Badge pill bg='success'> 2 </Badge>
+                  </div>
+                 
+                  <div className="btn text-danger bg-white mx-1 " to="/" onClick={handleLogout}>Logout</div>
                 </div>
               }
              

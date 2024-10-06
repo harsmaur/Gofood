@@ -25,7 +25,7 @@ const loginUser = async (req, res) => {
         return res.status(401).json({ error: "Try logging in with correct credentials" });
       }
 
-      const authToken = jwt.sign({UserID: userData._id},JWT_SECRET_KEY,{expiresIn: '5d'})
+      const authToken = jwt.sign({UserID: userData._id},JWT_SECRET_KEY,{expiresIn: '1d'})
 
       console.log('logged in success')
       return res.json({ success: true, authToken: authToken });

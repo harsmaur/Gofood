@@ -27,11 +27,11 @@ export default function Home() {
   }
 
   const images = [
-    "https://source.unsplash.com/random/1000x400/?samosa",
-    "https://source.unsplash.com/random/1000x400/?rasgulla",
-    "https://source.unsplash.com/random/1000x400/?pizza"
+    "/images/image1.jpg",
+    "/images/image2.jpg",
+    "/images/image3.jpg"
 ];
-
+  
   useEffect(() => {
     loadData();
     
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div>
 
-      <div> <Navbar /> </div>
+      <div className='sticky-top'> <Navbar /> </div>
       
       {/* carousal  */}
       <div>

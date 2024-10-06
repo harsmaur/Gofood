@@ -7,10 +7,11 @@ export default function Carousel(props) {
     const [search, setsearch] = useState('');
 
     const images = [
-        "https://source.unsplash.com/random/1000x400/?tacos",
-        "https://source.unsplash.com/random/1000x400/?ramen",
-        "https://source.unsplash.com/random/1000x400/?pizza"
+        "/images/image1.jpg",
+        "/images/image2.jpg",
+        "/images/image3.jpg"
     ];
+    
 
     useEffect(() => {
       const preLoadImages = () =>{
@@ -43,7 +44,8 @@ export default function Carousel(props) {
                     {images.map((image, index) => (
                         <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                             {/* Use the image URL as the source */}
-                            <img src={image} className="d-block w-100" alt={` ${image.src}`} style={{ filter: "brightness(100%" }} />
+                            <img src={image} className="d-block w-100" alt={`Slide ${index + 1}`} style={{ filter: "brightness(100%" }} />
+
                         </div>
                     ))}
                   </div>

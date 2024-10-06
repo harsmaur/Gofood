@@ -45,7 +45,7 @@ export default function Login() {
   return (
     <>
        <section className="vh-100 bg-image"
-                style={{ backgroundImage: "url('https://source.unsplash.com/random/1000x1000/?burger')" }}>
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')" }}>
                 <div className="mask d-flex align-items-center h-100 gradient-custom-3">
                     <div className="container h-100">
                         <div className="row d-flex justify-content-center align-items-center h-50">
